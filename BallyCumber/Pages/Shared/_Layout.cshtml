@@ -6,28 +6,26 @@
     <title>@ViewData["Title"] - BallyCumber</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/BallyCumber.css" />
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">BallyCumber</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
+        <div class="topnav">
+            <a class="active" href="#home">Home</a>
+            <a href="#news">Rent a book</a>
+            <a href="#contact">Worm Connect</a>
+            <div class="topnav-right">
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <p>Welcome, @User.Claims.Where(x => x.Type == "name").FirstOrDefault().ToString().Replace("name:", ""), you're awesome...!!!</p>
+                }
+                else
+                {
+                    <p>Welcome, Guest, you're awesome...!!!</p>
+                }
             </div>
-        </nav>
+        </div>
+        
     </header>
     <div class="container">
         <main role="main" class="pb-3">

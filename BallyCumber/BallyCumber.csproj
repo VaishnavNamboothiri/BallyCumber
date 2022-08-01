@@ -4,4 +4,15 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\Assets\Images\Book.png" />
+    <None Include="wwwroot\Assets\Images\Books.jpg" />
+    <None Include="wwwroot\Assets\Images\heart_book_icon_214933.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="3.1.27" />
+    <PackageReference Include="Microsoft.Identity.Web" Version="1.24.1" />
+  </ItemGroup>
+
 </Project>
