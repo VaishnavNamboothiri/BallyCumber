@@ -17,7 +17,7 @@
             <div class="topnav-right">
                 @if (User.Identity.IsAuthenticated)
                 {
-                    <p>Welcome, @User.Claims.Where(x => x.Type == "name").FirstOrDefault().ToString().Replace("name:", ""), you're awesome...!!!</p>
+                    <p>Welcome, @User.Claims.Where(x => x.Type == "name").FirstOrDefault().ToString().Replace("name:", ""), you're superb...!!!</p>
                 }
                 else
                 {
